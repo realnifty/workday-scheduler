@@ -20,35 +20,26 @@ function dateTime() {
 // this function calls the dateTime function every (1) second to dynamically update the time on webpage
 setInterval(dateTime, 1000);
 
-var hourArr = [
-    {hour:'9'},
-    {hour:'10'},
-   {hour:'11'},
-    {hour:'12'},
-    {hour:'1'},
-    {hour:'2'},
-    {hour:'3'},
-    {hour:'4'},
-    {hour:'5'}
-];
-
+// this function assigns a class of past present or future depending on the time of day compared to the hour marked on the time-block
 function timeblockColor() {
-    var bizHour = $('.hour').data('hour')
-    var currentHour = parseInt(moment().format('H'));
-    var hourInput = $('#hour-input');
-    console.log(bizHour)
-    console.log(currentHour)
 
-    if (bizHour >= 1 && bizHour <= 5) {
-        bizHour = bizHour + 12;
-    }
+    // variable declaration selects elements with a class of hour, and target the data attribute 'data-hour' for each
+    var bizHour = $('.hour').data('hour')
+
+    // variable declaration sets the current hour via moment.js as a number data-type to be compared to time-block hour
+    var currentHour = parseInt(moment().format('H'));
+
+    // variable declaration selects the textarea html tag to target and set specific classes
+    var hourInput = $('.hour-input');
+    
+    // these statements compare the time-block hour data to the current moment.js hour, and set specific classes if the conditions are met
     if (bizHour < currentHour) {
         hourInput.addClass('past');
     }
-    if (bizHour > currentHour) {
+    else if (bizHour > currentHour) {
         hourInput.addClass('future');
     }
-    if (bizHour == currentHour) {
+    else if (bizHour == currentHour) {
         hourInput.addClass('present');
     }
 };
