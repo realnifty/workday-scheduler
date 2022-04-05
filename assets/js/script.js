@@ -12,6 +12,9 @@
 // WHEN I refresh the page
 // THEN the saved events persist
 
+var toDos = {}
+let toDoInput = $('.input');
+
 // this function replaces the current text content of #currentDay and displays a moment.js local date and time
 function dateTime() {
     $('#currentDay').text(moment().format('MMMM Do YYYY, h:mm:ss a'));
@@ -31,7 +34,7 @@ function timeblockColor() {
 
     // variable declaration selects the textarea html tag to target and set specific classes
     var hourInput = $('.hour-input');
-    
+
     // these statements compare the time-block hour data to the current moment.js hour, and set specific classes if the conditions are met
     if (bizHour < currentHour) {
         hourInput.addClass('past');
@@ -43,4 +46,13 @@ function timeblockColor() {
         hourInput.addClass('present');
     }
 };
+
 timeblockColor();
+
+$('.saveBtn').click(function() {
+    localStorage.setItem('tasks', toDoInput.val());
+});
+
+function loadToDo() {
+    toDoInput.val() == localStorage.getItem('tasks');
+}
