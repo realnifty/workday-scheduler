@@ -8,26 +8,36 @@ setInterval(dateTime, 1000);
 
 // this function assigns a class of past present or future depending on the time of day compared to the hour marked on the time-block
 function timeblockColor() {
-
+    var timeBlockHour = [];
+    var timeBlockE = [];
     // variable declaration selects elements with a class of hour, and target the data attribute 'data-hour' for each
-    var bizHour = $('.input').data('number')
+    $('.input').each(function() {
+        timeBlockHour.push($(this).data('number'))
+        for (var i = 0; i < timeBlockHour.length; i++) {
+            console.log(timeBlockHour[i])
+            var currentHour = parseInt(moment().format('H'));
+        
+            // variable declaration selects the textarea html tag to target and set specific classes
+            $('.hour-input').each(function() {
+                timeBlockE.push($(this))
+            });
 
+            console.log(timeBlockE[i])
+            // these statements compare the time-block hour data to the current moment.js hour, and set specific classes if the conditions are met
+            if (timeBlockHour[i] < currentHour) {
+                timeBlockE[i].addClass('past');
+            }
+            else if (timeBlockHour[i] > currentHour) {
+                timeBlockE[i].addClass('future');
+            }
+            else if (timeBlockHour[i] == currentHour) {
+                timeBlockE[i].addClass('present');
+            }
+        
+        }
+    })
+    
     // variable declaration sets the current hour via moment.js as a number data-type to be compared to time-block hour
-    var currentHour = parseInt(moment().format('H'));
-
-    // variable declaration selects the textarea html tag to target and set specific classes
-    var hourInput = $('.hour-input');
-
-    // these statements compare the time-block hour data to the current moment.js hour, and set specific classes if the conditions are met
-    if (bizHour < currentHour) {
-        hourInput.addClass('past');
-    }
-    else if (bizHour > currentHour) {
-        hourInput.addClass('future');
-    }
-    else if (bizHour == currentHour) {
-        hourInput.addClass('present');
-    }
 };
 
 timeblockColor();
