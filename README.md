@@ -1,35 +1,53 @@
-# 05 Third-Party APIs: Work Day Scheduler
+# Work-day Scheduler
 
-The objective of this challenge was to create a simple calendar application that allows the user to save events for each hour of the day. I was provided started code and wrote code in the js file to the best of my knowledge, applying teachings learned in the modules leading up to and including module 5. The acceptance criteria are as follows:
+![License: MIT License](https://img.shields.io/badge/license-MIT-orange)
+  
+## Description
 
-## Acceptance Criteria
-
-```
-'GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-THEN I am presented with timeblocks for standard business hours
-WHEN I view the timeblocks for that day
-THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-WHEN I click into a timeblock
-THEN I can enter an event
-WHEN I click the save button for that timeblock
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist'
-```
-
-## The following screenshots demonstrate the application functionality:
-
-Color coded time blocks and current time and date:
+A web app that allows users to save events at each hour of a work-day to track their daily schedule. Users can type their tasks in the input box and hit save to set the task for that hour. Scheduled tasks persist upon page reload unless localstorage is cleared and are limited to a user's browser.
 
 ![Color coded time blocks and current time and date.](./assets/images/final-app-ss.png)
 
-Entered user input persistent upon page reload:
 
 ![Entered user input persistent upon page reload.](./assets/images/final-app-ss-2.png)
 
-## Deployed App
+[Deployment](https://realnifty.github.io/workday-scheduler/)
 
-[GH Pages](https://realnifty.github.io/05-workday-scheduler/)
+## Table of Contents
+
+- [Technologies](#technologies)
+- [Installation](#installation)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+
+## Technologies
+
+This app was built with:
+- HTML
+- CSS
+- JavaScript(jQuery)
+
+## Installation
+
+No installation required! Simply navigate to the deployment via link provided above. To run locally, clone the repository to your local machine and open with your preferred browser.
+
+## License
+    
+Licensed under the [MIT License](https://spdx.org/licenses/MIT.html)
+
+## Contributing
+
+No contributions will be accepted at this time.
+
+## Tests
+
+No testing is planned for this project at this time.
+
+## Questions
+
+Have questions? Reach me at the following sources!
+
+* GitHub: [realnifty](https://github.com/realnifty)
+* E-mail: rogelioalbertopedraza@gmail.com or lovecore@pm.me
